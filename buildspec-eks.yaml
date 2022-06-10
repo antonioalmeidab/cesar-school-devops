@@ -9,9 +9,8 @@ phases:
   pre_build:
     commands:
       - echo Logging in to AWS EKS...
-      - aws eks update-kubeconfig --region us-east-1 --name cluster-aula-cesar
+      - aws eks update-kubeconfig --region us-west-2 --name aaba
   post_build:
     commands:
-      - echo Instalando...
       - aws sts get-caller-identity
       - kubectl apply -f kubernetes/
